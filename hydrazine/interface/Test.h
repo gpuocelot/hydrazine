@@ -27,7 +27,7 @@ namespace test
 	*/
 	class Test
 	{
-		protected:
+		public:
 			typedef boost::random::mersenne_twister
 			<
 				unsigned int,
