@@ -26,7 +26,6 @@
 #include <interface/Configurable.h>
 #include <interface/Test.h>
 #include <interface/Thread.h>
-#include <interface/Version.h>
 
 #endif
 
