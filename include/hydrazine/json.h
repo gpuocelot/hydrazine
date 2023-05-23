@@ -311,6 +311,9 @@ namespace json {
 		
 		//! casts value to an integer, assuming it is a Number
 		operator int() const;
+
+		//! casts values to an integer, assuming it is a Number
+		operator uint64_t() const;
 		
 		//! casts value to a double, assuming it is a Number
 		operator double() const;

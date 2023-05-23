@@ -1290,6 +1290,18 @@ json::Visitor::operator int() const {
 	return (int)number->value_real;
 }
 
+//! casts value to an integer, assuming it is a Number
+json::Visitor::operator uint64_t() const {
+        if (value->type != Value::Number) {
+                throw EXCEPTION("operator int() expects Visitor to wrap a Number");
+        }
+        Number *number = static_cast<Number *>(value);
+        if (number->number_type == Number::Integer) {
+                return number->value_integer;
+        }
+        return (uint64_t)number->value_real;
+}
+
 //! casts value to a double, assuming it is a Number
 json::Visitor::operator double() const {
 	if (value->type != Value::Number) {
