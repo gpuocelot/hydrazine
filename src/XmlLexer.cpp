@@ -37,7 +37,7 @@ namespace hydrazine
 		
 		char commentBegin[5];
 		commentBegin[4] = 0;
-		std::ios::streampos position = file.tellg();
+		std::streampos position = file.tellg();
 		file.readsome( commentBegin, 4 );
 		
 		if( file.gcount() == 4 )
@@ -205,7 +205,7 @@ namespace hydrazine
 			else if( peek == '\n' || peek == ' ' || peek == '\t' )
 			{
 			
-				std::ios::streampos checkpoint = file.tellg();
+				std::streampos checkpoint = file.tellg();
 				bool scanning = true;
 				while( scanning )
 				{
@@ -286,7 +286,7 @@ namespace hydrazine
 		report( " Peeking at the next line." );
 	
 		string.clear();
-		std::ios::streampos position = file.tellg();
+		std::streampos position = file.tellg();
 		
 		while( file.good() )
 		{
