@@ -11,6 +11,7 @@
 #ifndef HYDRAZINE_JSON_H_INCLUDED
 #define HYDRAZINE_JSON_H_INCLUDED
 
+#include <cstdint>
 #include <vector>
 #include <map>
 #include <string>
