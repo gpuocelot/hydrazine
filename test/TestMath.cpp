@@ -200,7 +200,7 @@ namespace test
 		for( unsigned int i = 0; i < correctnessIterations; i++ )
 		{
 		
-			unsigned int value = abs( random() );
+			unsigned int value = random();
 		
 			powerOfTwoValue = 1;
 		
@@ -267,7 +267,7 @@ namespace test
 		
 		for( unsigned int i = 0; i < correctnessIterations; i++ )
 		{
-			int value = abs( random() );
+			int value = abs( static_cast<int>(random()) );
 		
 			powerOfTwoIntValue = 1;
 		
@@ -402,7 +402,7 @@ namespace test
 		// do for int
 		for( unsigned int i = 0; i < correctnessIterations; i++ )
 		{
-			int value = abs( random() );
+			int value = abs( static_cast<int>(random()) );
 			int experimental = hydrazine::powerOfTwo( value );
 			int reference = naivePowerOfTwo( value );
 			
