@@ -91,7 +91,7 @@ const std::vector< json::Value *>& json::Value::as_array() const {
 	throw EXCEPTION("Invalid cast");
 }
 
-const std::vector< int >& json::Value::as_dense_array() const {
+const std::vector< long long int >& json::Value::as_dense_array() const {
 	if (type == Value::DenseArray) {
 		const json::DenseArray *element = static_cast<const json::DenseArray *>(this);
 		return element->sequence;
@@ -136,6 +136,12 @@ json::Number::Number(double real_value): Value(Value::Number), number_type(Real)
 }
 
 json::Number::Number(int int_value): Value(Value::Number), number_type(Integer), 
+										 value_real(0), value_integer(int_value)  {
+
+}
+
+
+json::Number::Number(long long int int_value): Value(Value::Number), number_type(Integer), 
 										 value_real(0), value_integer(int_value)  {
 
 }
@@ -393,7 +399,7 @@ json::Value *json::Parser::parse_value(std::istream &input) {
 }
 
 json::Value *json::Parser::parse_array(std::istream &input) {
-	typedef std::deque<int> FastIntVector;
+	typedef std::deque<long long int> FastIntVector;
 	
 	FastIntVector denseSequence;
 	
