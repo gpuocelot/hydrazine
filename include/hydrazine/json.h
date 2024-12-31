@@ -68,7 +68,7 @@ namespace json {
 		const std::vector< Value *>& as_array() const;
 		
 		//! returns a vector of integers if the value is a dense array
-		const std::vector< int >& as_dense_array() const;
+		const std::vector< long long int >& as_dense_array() const;
 		
 		//! returns a dictionary of values if the value is an object
 		const std::map< std::string, Value *>& as_object() const;
@@ -100,6 +100,7 @@ namespace json {
 		Number();
 		Number(double real_value);
 		Number(int int_value);
+		Number(long long int int_value);
 		virtual ~Number();
 
 		virtual Value *clone() const;
@@ -149,7 +150,7 @@ namespace json {
 	class DenseArray : public Value {
 	public:
 
-		typedef std::vector< int > IntVector;
+		typedef std::vector< long long int > IntVector;
 
 		typedef IntVector::iterator iterator;
 		typedef IntVector::const_iterator const_iterator;
